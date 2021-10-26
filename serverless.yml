@@ -1,0 +1,16 @@
+service: consulta-cep-serverless-go
+provider:
+  name: aws
+  runtime: go1.x
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+functions:
+  consulta-cep-serverless-go:
+    handler: bin/consulta-cep-serverless-go
+    events:
+      - http:
+          path: /
+          method: get
