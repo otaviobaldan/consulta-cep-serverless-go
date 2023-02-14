@@ -2,6 +2,9 @@ service: consulta-cep-serverless-go
 provider:
   name: aws
   runtime: go1.x
+  region: ${opt:region, self:custom.defaultRegion}
+custom:
+  defaultRegion: sa-east-1
 package:
  exclude:
    - ./**
